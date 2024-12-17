@@ -15,7 +15,15 @@ export const loginCall = async () => {
     
 }
 
+// export const bringAllCharacters = async () => {
+//     const res = await axios.get("https://rickandmortyapi.com/api", /*headers*/)
+//     return res 
+// }
+
 export const bringAllCharacters = async () => {
-    const res = await axios.get("https://rickandmortyapi.com/api", /*headers*/)
-    return res
+    const res = await axios.get(`${API_URL}/character`, /*headers*/)
+    
+    console.log(res);
+    
+    return res 
 }

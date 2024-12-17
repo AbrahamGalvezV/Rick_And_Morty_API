@@ -30,3 +30,14 @@ h1 {
     color: black;
 }
 
+.container{
+    background-color: rgba(50, 50, 50, 0.438);
+    color: rgb(158, 231, 0);
+    display: block;
+    grid-template-columns: repeat(4, 1fr);
+    width: 450px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 30px;
+    gap: 15px;
+}
