@@ -18,12 +18,18 @@ export const loginCall = async () => {
 // export const bringAllCharacters = async () => {
 //     const res = await axios.get("https://rickandmortyapi.com/api", /*headers*/)
 //     return res 
-// }
+// } 
 
 export const bringAllCharacters = async () => {
     const res = await axios.get(`${API_URL}/character`, /*headers*/)
     
-    console.log(res);
+    // console.log(res.data.results);
     
-    return res 
+    return res.data.results
 }
+
+export const bringCharacterById = async (id) => {
+    const res = await axios.get(`${API_URL}/character/${id}`)
+    return res.data
+}
+

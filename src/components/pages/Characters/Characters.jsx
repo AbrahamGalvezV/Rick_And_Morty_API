@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { bringAllCharacters } from "../../../services/apiCalls";
+import { bringAllCharacters, bringCharacterById } from "../../../services/apiCalls";
+import { CharacterCard } from "../../CharacterCard/CharacterCard";
 import "./Characters.css";
 
 //--------------------------------------------------------
@@ -12,27 +13,39 @@ export const Characters = () => {
     //  lógica que me convenga usar
 
     bringAllCharacters()
-      .then((apiResponse) => {
-        setCharacters(apiResponse.data.results);
+      .then((res) => {
+        setCharacters(res);
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  const cardClicHandler = (char) => {
+    bringCharacterById(char.id)
+    .then((res) => {
+      console.log(res);
+      
+    })    
+  } 
+
   return (
     <>
-      <div className="container">
-        <div className="characters-desing">
+      <div className="characters-desing">
+        <header className="characters-header">
           <h1>Rick And Morty</h1>
           <button onClick={bringCharacters}>Mostrar personajes</button>
+        </header>
+
+        <div className="character-list">
           <ol>
-            {characters.map((char, index) => {
-              return (
-              <li key={index}>{char.name}</li>
-              )
+            {characters.map((char) => {
+              return (<CharacterCard key={char.id}
+                 character={char} 
+                 handlerClic={() => cardClicHandler(char)}
+                 />);  
             })}
-          </ol>
+          </ol> 
         </div>
       </div>
     </>
