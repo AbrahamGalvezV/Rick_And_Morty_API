@@ -1,59 +1,45 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+@keyframes slideUp {
+    from {
+        margin-top: 100vh;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
 }
 
-a {
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-button {
-    border: none;
-    background-color: transparent;
-}
-
-body {
-    background: url('../../../../img/home.png') center/cover no-repeat fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
-h1 {
-    color: black;
-}
-
-.characters-page {
+.characters-desing {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    gap: 20px;
-    height: 100vh;
-    box-sizing: border-box;
+    background-color: rgba(34, 34, 34, 0.575);
+    position: relative;
+    z-index: 1; /* Asegura que este contenido esté encima del banner */
+    margin-top: 100vh; /* Empuja los personajes hacia abajo para que aparezcan al desplazarse */
+    padding: 2rem;
+    opacity: 0;
+    transition: margin-top 1s ease-out, opacity 1s ease-out;
 }
 
-.characters-header {
+.characters-desing.animate {
+    margin-top: 0;
+    opacity: 1;
+} 
+
+.characters-desing-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-color: rgba(19, 19, 19, 0.365);
-    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.505);
+    color: #9ee700;
     width: 500px;
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
     border-radius: 15px;
-
 }
 
 .character-list {
@@ -77,7 +63,6 @@ h1 {
 
 .character-card {
     flex: 0 1 calc(33.333% - 20px);
-    max-width: 300px;
+    /* max-width: 300px; */
     margin: 10px auto;
 }
-

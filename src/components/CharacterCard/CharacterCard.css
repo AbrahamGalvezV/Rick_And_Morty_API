@@ -1,17 +1,20 @@
 .character-card {
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     margin: 10px auto;
-    width: 90%; /* Se adapta a casi todo el ancho de la pantalla */
-    max-width: 600px; /* Evita que las tarjetas sean demasiado grandes */
-    background-color: rgba(50, 50, 50, 0.8);
+    width: 90%;
+    /* Se adapta a casi todo el ancho de la pantalla */
+    max-width: 600px;
+    /* Evita que las tarjetas sean demasiado grandes */
+    background-color: rgba(0, 0, 0, 0.505);
     color: #9ee700;
     border-radius: 15px;
     gap: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-wrap: wrap; /* Permite que el contenido se reorganice en pantallas pequeñas */
+    flex-wrap: wrap;
+    /* Permite que el contenido se reorganice en pantallas pequeñas */
 }
 
 .character-card:hover {
@@ -20,8 +23,10 @@
 }
 
 .character-image {
-    width: 30%; /* La imagen ocupa un 30% del ancho de la tarjeta */
-    max-width: 120px; /* No será más grande que 120px */
+    width: 50%;
+    /* La imagen ocupa un 30% del ancho de la tarjeta */
+    max-width: 120px;
+    /* No será más grande que 120px */
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -32,7 +37,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    flex: 1; /* La información ocupa el resto del espacio disponible */
+    flex: 1;
+    /* La información ocupa el resto del espacio disponible */
 }
 
 .character-info h4 {
@@ -50,22 +56,4 @@
     font-size: 1rem;
     margin: 0;
     color: #d4ff8a;
-}
-
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media screen and (max-width: 768px) {
-    .character-card {
-        flex-direction: column; /* La imagen y el texto se apilan verticalmente */
-        align-items: center; /* Centra el contenido */
-        width: 95%; /* Ocupa casi todo el ancho en pantallas pequeñas */
-    }
-
-    .character-image {
-        width: 100%; /* Imagen a pantalla completa dentro de la tarjeta */
-        max-width: none; /* No hay límite de tamaño */
-    }
-
-    .character-info {
-        text-align: center; /* Texto centrado para pantallas pequeñas */
-    }
 }

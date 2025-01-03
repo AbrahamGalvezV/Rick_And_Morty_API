@@ -22,6 +22,8 @@ export const loginCall = async () => {
 
 export const bringAllCharacters = async () => {
     const res = await axios.get(`${API_URL}/character`, /*headers*/)
+
+    
     
     // console.log(res.data.results);
     

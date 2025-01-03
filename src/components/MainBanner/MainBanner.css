@@ -1,0 +1,15 @@
+.banner {
+    position: fixed; /* Fija el banner */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    width: 100%; /* Ocupa todo el ancho */
+    z-index: -1; /* Coloca el banner detrás de los otros elementos */
+    overflow: hidden; /* Asegura que no haya contenido sobrante */
+}
+
+.banner__img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Escala la imagen para cubrir el área */
+}

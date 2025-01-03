@@ -1,0 +1,9 @@
+.home__title {
+    text-align: center;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
